@@ -94,7 +94,7 @@ export default function App() {
       <footer className="footer">
         <span className="footer-name">neko</span>
         <span className="footer-sep">·</span>
-        <a href="https://github.com/hasnainsikora/gcloud-opencode" target="_blank" rel="noreferrer">
+        <a href="https://github.com/hasnain40247/neko-code" target="_blank" rel="noreferrer">
           github
         </a>
       </footer>
