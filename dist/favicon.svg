@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- ears -->
+  <polygon points="2,14 8,2 14,14" fill="#1a1a1a"/>
+  <polygon points="18,14 24,2 30,14" fill="#1a1a1a"/>
+  <!-- ear inner -->
+  <polygon points="4,13 8,5 12,13" fill="#DB2777"/>
+  <polygon points="20,13 24,5 28,13" fill="#DB2777"/>
+  <!-- head -->
+  <rect x="2" y="12" width="28" height="18" rx="4" fill="#1a1a1a"/>
+  <!-- eyes -->
+  <rect x="8" y="17" width="5" height="5" fill="#DB2777"/>
+  <rect x="19" y="17" width="5" height="5" fill="#DB2777"/>
+  <!-- nose -->
+  <rect x="14" y="23" width="4" height="3" fill="#DB2777"/>
+</svg>

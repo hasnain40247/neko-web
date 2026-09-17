@@ -1,0 +1,322 @@
+/* ── Page ── */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 100;
+  background: none;
+  border: none;
+  color: var(--dim);
+  padding: 4px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+}
+
+/* ── Hero — split pane ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  min-height: calc(100vh - 1px);
+}
+
+.hero-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg2);
+  padding: 0;
+  transition: background 0.2s, border-color 0.2s;
+  overflow: hidden;
+}
+
+@keyframes cat-jump {
+  0%   { transform: translateY(0) scaleY(1); }
+  20%  { transform: translateY(-60px) scaleY(1.05); }
+  50%  { transform: translateY(-90px) scaleY(1); }
+  75%  { transform: translateY(-20px) scaleY(0.95); }
+  90%  { transform: translateY(0) scaleY(1.04); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+.hero-cat {
+  width: 130%;
+  max-width: none;
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+.hero-cat--jump {
+  animation: cat-jump 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) forwards;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 56px;
+  gap: 0;
+  background: var(--bg);
+  transition: background 0.2s;
+}
+
+.hero-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(96px, 14vw, 200px);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
+  color: var(--accent);
+  margin-bottom: 28px;
+  transition: color 0.2s;
+}
+
+.hero-tagline {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(14px, 1.5vw, 17px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  max-width: 420px;
+  line-height: 1.65;
+  margin-bottom: 48px;
+  text-align: right;
+  align-self: flex-end;
+  transition: color 0.2s;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  font-style: italic;
+  text-decoration: none;
+  padding: 11px 34px;
+  border-radius: 2px;
+  transition: opacity 0.15s;
+}
+
+.hero-cta:hover {
+  opacity: 0.82;
+}
+
+@media (max-width: 680px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-left {
+    padding: 48px 24px;
+  }
+
+  .hero-cat {
+    width: min(320px, 80%);
+  }
+
+  .hero-right {
+    align-items: center;
+    text-align: center;
+    padding: 48px 24px 56px;
+  }
+
+  .hero-tagline {
+    max-width: 100%;
+  }
+}
+
+/* ── Download ── */
+.download {
+  background: var(--accent-lo);
+  border-top: none;
+  padding: 72px 24px;
+  text-align: center;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.download::before,
+.download::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.download::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+}
+
+.download::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg), transparent);
+}
+
+.download-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(40px, 7vw, 64px);
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  margin-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.download-sub {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  margin-bottom: 48px;
+  transition: color 0.2s;
+}
+
+.install-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 780px;
+  margin: 0 auto 36px;
+  text-align: left;
+}
+
+.install-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.install-label {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: color 0.2s;
+}
+
+.install-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg3);
+  border: 1px solid var(--muted);
+  border-radius: 3px;
+  padding: 10px 14px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.install-cmd {
+  flex: 1;
+  font-family: ui-monospace, "Cascadia Code", "SF Mono", Menlo, monospace;
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.2s;
+}
+
+.copy-btn {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid var(--muted);
+  border-radius: 2px;
+  color: var(--dim);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 12px;
+  font-style: italic;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.copy-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.download-note {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--dim);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.7;
+  transition: color 0.2s;
+}
+
+.download-note a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.download-note a:hover {
+  text-decoration: underline;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 28px 32px;
+  border-top: none;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--dim);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.footer-name {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.footer-sep {
+  color: var(--muted);
+}
+
+.footer a {
+  color: var(--dim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
